@@ -1,0 +1,125 @@
+include mixins
+
+doctype
+html( lang="en" )
+	head
+		title Baking Bootstrap Snippets with Jade
+		meta( charset='utf-8' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+		meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+		
+		//- Bootswatch Theme
+		+bootswatch("flatly")
+
+	body(style="padding-bottom:10rem;")
+
+		.container
+
+			.page-header: h1 Navbars
+
+			//- Navbar with dropdowns, default color
+			+nav("Project name", "dropdown_menu")
+				+nav_item( "index.html", "active" ) Home
+				+nav_item( "about.html" ) About
+				+nav_item( "contact.html" ) Contact
+				+nav_item_dropdown( "#" )( label="Dropdown")
+					+nav_item( "#" ) Action
+					+nav_item( "#" ) Another action
+					+nav_item( "#" ) Something else here
+					+nav_divider
+					+nav_header Nav header
+					+nav_item( "#" ) Separated link
+					+nav_item( "#" ) One more separated link
+
+			.page-header
+				h1 Grid &amp; Panels
+			.row
+				.col-md-4.col-sm-6.col-xs-12
+					+panel("Panel Heading") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+				.col-md-4.col-sm-6.col-xs-12
+					+panel("Panel Heading", "success") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+	
+				.col-md-4.col-sm-6.col-xs-12
+					+panel("Panel Heading", "primary") We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+
+			//- Buttons
+			.page-header: h1 Buttons &amp; Alerts
+
+			.row
+				.col-sm-6.col-xs-12
+
+					+button Default
+					| &nbsp;
+					+button("primary", "link.htm") Primary
+					| &nbsp;
+					+button("success", "success.html") Success
+					| &nbsp;
+					+button("info", "info.html") Info
+					| &nbsp;
+					+button("warning", "warning.html") Warning
+					| &nbsp;
+					+button("danger", "danger.html") Danger
+					| &nbsp;
+
+					//- spacer
+					p &nbsp;
+
+				.col-sm-6.col-xs-12
+				
+					+alert("warning") Warning! Warning!
+
+					+alert("danger") Danger Will Robinson!
+
+					+alert("success") You succeeded :-)
+
+					+alert("info") Some information for you
+
+			//- Jumbotron inside container
+			.page-header: h1 Jumbotron
+
+			.jumbotron
+				h1 Hello, world!
+				p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+				p: +button("primary", "more.htm", "large") Learn more
+			
+			.page-header
+				h1 List Groups
+			.row
+				.col-md-4.col-sm-12
+					+listGroup('list')
+						+listItem("active") Cras justo odio
+						+listItem Dapibus ac facilisis in
+						+listItem Morbi leo risus
+						+listItem Dapibus ac facilisis in
+						+listItem Morbi leo risus
+						+listItem Dapibus ac facilisis in
+				
+				.col-md-4.col-sm-12
+					+listGroup
+						+listItem
+							+listHeading List group item heading
+							+listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						+listItem
+							+listHeading List group item heading
+							+listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						+listItem
+							+listHeading List group item heading
+							+listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+				
+				.col-md-4.col-sm-12
+					+listGroup('links')
+						+listItem("link1.html", "active")
+							+listHeading List group item heading
+							+listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						+listItem("link2.html")
+							+listHeading List group item heading
+							+listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						+listItem("link3.html")
+							+listHeading List group item heading
+							+listText Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+		script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+		script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )

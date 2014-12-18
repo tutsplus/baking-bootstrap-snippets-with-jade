@@ -1,0 +1,158 @@
+doctype
+html( lang="en" )
+	head
+		title Baking Bootstrap Snippets with Jade
+		meta( charset='utf-8' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+		meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+		//- Bootswatch Theme
+		link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css", rel="stylesheet")
+
+	body(style="padding-bottom:10rem;")
+		.container
+
+			.page-header: h1 Navbars
+			
+			//- Basic navbar, inverse color
+			nav.navbar.navbar-inverse( role="navigation" )
+				.navbar-header
+					button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-default", aria-expanded="false", aria-controls="navbar")
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href="#") Project name
+
+				#navbar-default.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li.active: a( href="#") Home
+						li: a( href="#about" ) About
+						li: a( href="#contact" ) Contact
+
+			//- Navbar with dropdowns, default color
+			nav.navbar.navbar-default( role="navigation" )
+				.navbar-header
+					button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href="#") Project name
+
+				#navbar-inverse.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li.active: a( href="#") Home
+						li: a( href="#about" ) About
+						li: a( href="#contact" ) Contact
+						li.dropdown
+							a.dropdown-toggle( href="#", data-toggle="dropdown", role="button", aria-expanded="false" ) Dropdown 
+								span.caret
+							ul.dropdown-menu( role="menu" )
+								li: a( href="#" ) Action
+								li: a( href="#" ) Another action
+								li: a( href="#" ) Something else here
+								li.divider
+								li.dropdown-header Nav header
+								li: a( href="#" ) Separated link
+								li: a( href="#" ) One more separated link
+
+
+			.page-header
+				h1 Grid &amp; Panels
+			.row
+				.col-md-4.col-sm-6.col-xs-12
+					.panel.panel-default
+						.panel-heading Panel Heading
+						.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+				.col-md-4.col-sm-6.col-xs-12
+					.panel.panel-success
+						.panel-heading Panel Heading
+						.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+	
+				.col-md-4.col-sm-6.col-xs-12
+					.panel.panel-primary
+						.panel-heading Panel Heading
+						.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+
+			//- Buttons
+			.page-header: h1 Buttons &amp; Alerts
+
+			.row
+				.col-sm-6.col-xs-12
+
+					a.btn.btn-default Default
+					| &nbsp;
+					a.btn.btn-primary( href="link.htm" ) Primary
+					| &nbsp;
+					a.btn.btn-success Success
+					| &nbsp;
+					a.btn.btn-info Info
+					| &nbsp;
+					a.btn.btn-warning Warning
+					| &nbsp;
+					a.btn.btn-danger Danger
+					| &nbsp;
+
+				.col-sm-6.col-xs-12
+					.alert.alert-dismissable.alert-warning
+						button.close( type="button", data-dismiss="alert" ) ×
+						| Warning! Warning!
+					.alert.alert-dismissable.alert-danger
+						button.close( type="button", data-dismiss="alert" ) ×
+						| Danger Will Robinson!
+					.alert.alert-dismissable.alert-success
+						button.close( type="button", data-dismiss="alert" ) ×
+						| You succeeded :-)
+					.alert.alert-dismissable.alert-info
+						button.close( type="button", data-dismiss="alert" ) ×
+						| Some information for you
+
+			//- Jumbotron
+			.page-header: h1 Jumbotron
+
+			.jumbotron
+				h1 Hello, world!
+				p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+				p: a.btn.btn-primary.btn-lg Learn more
+			
+			.page-header
+				h1 List Groups
+			.row
+				.col-md-4.col-sm-12
+					ul.list-group
+						li.list-group-item.active Cras justo odio
+						li.list-group-item Dapibus ac facilisis in
+						li.list-group-item Morbi leo risus
+						li.list-group-item Dapibus ac facilisis in
+						li.list-group-item Morbi leo risus
+						li.list-group-item Dapibus ac facilisis in
+				
+				.col-md-4.col-sm-12
+					.list-group
+						.list-group-item( href="#" )
+							h4.list-group-item-heading List group item heading
+							p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						.list-group-item( href="#" )
+							h4.list-group-item-heading List group item heading
+							p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						.list-group-item( href="#" )
+							h4.list-group-item-heading List group item heading
+							p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+				
+				.col-md-4.col-sm-12
+					.list-group
+						a.list-group-item.active( href="#" )
+							h4.list-group-item-heading List group item heading
+							p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						a.list-group-item( href="#" )
+							h4.list-group-item-heading List group item heading
+							p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+						a.list-group-item( href="#" )
+							h4.list-group-item-heading List group item heading
+							p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+		script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+		script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
